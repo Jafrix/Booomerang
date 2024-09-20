@@ -33,6 +33,7 @@ class Game {
     this.fillTrack();
     // Сборка всего необходимого (герой, враг(и), оружие)
     // в единую структуру данных
+
     this.track[this.boomerang.positionY][
       this.boomerang.positionX
     ] = `\x1b[42m${this.boomerang.skin}\x1b[0m`;
@@ -43,6 +44,7 @@ class Game {
     this.track[this.enemy.positionY][
       this.enemy.positionX
     ] = `\x1b[42m${this.enemy.skin}\x1b[0m`;
+
   }
 
   check() {
@@ -67,7 +69,9 @@ class Game {
 
       this.check();
       this.enemy.moveLeft();
+
       this.boomerang.moveRight();
+
       this.view.render(this.track);
     }, 100);
   }
