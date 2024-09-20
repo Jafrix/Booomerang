@@ -2,9 +2,12 @@
 const Boomerang = require('./Boomerang.js');
 
 class Hero {
-  constructor({ position }) {
+  constructor({ position, boomerang }) {
     this.skin = '🤠'; // можете использовать любые emoji '💃'
     this.position = position || 0;
+    this.boomerang = boomerang;
+    this.scores = 0;
+
   }
 
   moveLeft() {
@@ -18,7 +21,7 @@ class Hero {
   }
 
   attack() {
-    // Атакуем.
+    this.boomerang.position = this.position + 1;
     this.boomerang.fly();
   }
 

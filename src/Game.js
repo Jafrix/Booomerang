@@ -45,7 +45,7 @@ class Game {
       this.regenerateTrack();
       runInteractiveConsole();
       this.check();
-      this.hero.moveRight()
+      // this.hero.moveRight()
       this.view.render(this.track);
     }, 1000);
   }
