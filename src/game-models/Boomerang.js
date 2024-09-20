@@ -4,7 +4,7 @@
 
 class Boomerang {
   constructor(trackLength) {
-    this.skin = '🌀';
+    this.skin = '🍅';
 
     this.positionX = 0;
     this.positionY = 2;

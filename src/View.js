@@ -9,14 +9,14 @@ const figlet = require("figlet");
 class View {
 
   render(track) {
-    const yourTeamName = 'Pirozhki';
+    const yourTeamName = '         = Tomatoes WarZ=';
 // console.log(message)
 
-    // Тут всё рисуем.
+    // Тут всё рисуем. wishes you good evening!
     
     console.clear();
 
-    console.log(chalk.green.bold(figlet.textSync(`${yourTeamName} wishes you good evening!`, { horizontalLayout: "full" })));
+    console.log(chalk.red.bold(figlet.textSync(`${yourTeamName}` , { horizontalLayout: "full" })));
 
     console.log(track.map((el) => el.join('')).join(EOL));
 

@@ -56,7 +56,7 @@ class Hero {
 
   die() {
     this.skin = '💀';
-    console.log(chalk.red.bold('YOU ARE DEAD!💀'));
+    console.log(chalk.red.bold('YOU ARE DEAD!🥃🥃🥃'));
     process.exit();
   }
 }
