@@ -24,8 +24,8 @@ class Hero {
 
   moveRight() {
     // Идём вправо.
-    if (this.positionY === 30) {
-      this.positionY === 30;
+    if (this.positionY === 50) {
+      this.positionY === 50;
     } else {
       this.positionX += 1;
     }
@@ -42,8 +42,8 @@ class Hero {
 
   moveDown() {
     // Идём вниз.
-    if (this.positionY === 4) {
-      this.positionY === 4;
+    if (this.positionY === 9) {
+      this.positionY === 9;
     } else {
       this.positionY += 1;
     }
