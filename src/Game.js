@@ -32,8 +32,10 @@ class Game {
     this.fillTrack();
     // Сборка всего необходимого (герой, враг(и), оружие)
     // в единую структуру данных
+
     this.track[this.hero.positionY][this.hero.positionX] = `\x1b[42m${this.hero.skin}\x1b[0m`;
     // this.track[this.enemy.position] = this.enemy.skin;
+
   }
 
   check() {
@@ -48,11 +50,11 @@ class Game {
       this.regenerateTrack();
 
       this.check();
-      // this.enemy.moveLeft();
+      this.enemy.moveLeft();
       // this.boomerang.fly();
       // this.hero.attack();
       this.view.render(this.track);
-    }, 10);
+    }, 100);
   }
 }
 
