@@ -8,19 +8,39 @@ class Boomerang {
     this.position = 0;
   }
 
+ 
+  // -------------------------------------------------------------------------------
+  
+
   fly() {
-    this.moveRight();
-    this.moveLeft();
+    // Запускаем движение бумеранга
+    this.move();
+  }
+
+  move() {
+    // Здесь можно добавить логику для перемещения
+    setInterval(() => {
+      if (this.position < this.trackLength - 1 && this.direction === 1) {
+        this.moveRight();
+      } else if (this.position > 0 && this.direction === -1) {
+        this.moveLeft();
+      } else {
+        // Меняем направление движения
+        this.direction *= -1;
+      }
+
+      console.log(`Бумеранг на позиции: ${this.position} ${this.skin}`);
+      
+      // Здесь можно добавить логику для проверки столкновения с врагом
+    }, 500); // останавливается на 0.5 секунды между движениями
   }
 
   moveLeft() {
-    // Идём влево.
-    this.position -= 1;
+    this.position -= 1; // Двигаем влево
   }
 
   moveRight() {
-    // Идём вправо.
-    this.position += 1;
+    this.position += 1; // Двигаем вправо
   }
 }
 
