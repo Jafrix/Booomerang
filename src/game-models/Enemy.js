@@ -1,9 +1,12 @@
 // Враг.
-
+const chalk = require("chalk");
 class Enemy {
   constructor() {
     this.generateSkin();
-    this.position = 2;
+
+    this.positionX = 100;
+    this.positionY = 2;
+
   }
 
   generateSkin() {
@@ -13,12 +16,19 @@ class Enemy {
 
   moveLeft() {
     // Идём влево.
-    this.position -= 1;
+    if (this.positionX === 0) {
+      this.positionX = 40;
+    } else {
+      this.positionX -= 1;
+    }
   }
 
   die() {
-    this.position = '?';
-    console.log('Enemy is dead!');
+    this.positionX += 1;
+    // this.positionY = '?';
+    console.log(chalk.red.bold('Enemy is dead!🐒🐒🐒'));
+    // console.log(`\n\n`)
+    process.exit();
   }
 }
 

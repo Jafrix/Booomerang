@@ -1,15 +1,32 @@
 // Сделаем отдельный класс для отображения игры в консоли.
+const { EOL } = require('os');
+
+
+const chalk = require("chalk");
+const figlet = require("figlet");
+
 
 class View {
-  render() {
-    const yourTeamName = 'Elbrus';
 
-    // Тут всё рисуем.
+  render(track) {
+    const yourTeamName = '         = Tomatoes WarZ=';
+// console.log(message)
+
+    // Тут всё рисуем. wishes you good evening!
+    
     console.clear();
-    console.log(this.game.track.join(''));
+
+    console.log(chalk.red.bold(figlet.textSync(`${yourTeamName}` , { horizontalLayout: "full" })));
+
+    console.log(track.map((el) => el.join('')).join(EOL));
+
     console.log('\n\n');
-    console.log(`Created by "${yourTeamName}" with love`);
+   
   }
 }
 
+
 module.exports = View;
+
+
+

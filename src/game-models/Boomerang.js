@@ -3,25 +3,27 @@
 // Тогда можно будет создать класс Weapon и воспользоваться наследованием!
 
 class Boomerang {
-  constructor() {
-    this.skin = '🌀';
-    this.position = 0;
-  }
+  constructor(trackLength) {
+    this.skin = '🍅';
 
+    this.positionX = 0;
+    this.positionY = 2;
+
+  }
+   
   fly() {
-    this.moveRight();
-    this.moveLeft();
   }
 
   moveLeft() {
-    // Идём влево.
-    this.position -= 1;
+    this.positionX -= 1; // Двигаем влево
   }
 
   moveRight() {
-    // Идём вправо.
-    this.position += 1;
+    this.positionX += 1; // Двигаем вправо
   }
 }
 
 module.exports = Boomerang;
+
+
+
