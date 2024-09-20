@@ -9,38 +9,39 @@ class Boomerang {
     this.trackLength = trackLength;
   }
 
+ 
+  // -------------------------------------------------------------------------------
+  
+
   fly() {
-    this.moveRight();
-    this.moveLeft();
-    const distance = 10; // дистанция полета бумеранга
-
-    for (let i = 0; i <= distance; i += 1) {
-      setTimeout(() => moveRight(1), 30 * i); // запускаем бумеранг на заданное расстояние
-    }
-
-    for (let i = 0; i <= distance; i += 1) {
-      setTimeout(() => this.moveLeft(1), 30 * (distance + 1)); // возвращаем бумеранг на заданное расстояние
-    }
-
-    setTimeout(() => this.reset(), 30 * (distance * 2)); // сбрасываем позицию бумеранга после возвращения
-
+    // Запускаем движение бумеранга
+    this.move();
   }
 
+  move() {
+    // Здесь можно добавить логику для перемещения
+    setInterval(() => {
+      if (this.position < this.trackLength - 1 && this.direction === 1) {
+        this.moveRight();
+      } else if (this.position > 0 && this.direction === -1) {
+        this.moveLeft();
+      } else {
+        // Меняем направление движения
+        this.direction *= -1;
+      }
 
-  reset() {
-    this.position = -1; // сброс позиции бумеранга
+      console.log(`Бумеранг на позиции: ${this.position} ${this.skin}`);
+      
+      // Здесь можно добавить логику для проверки столкновения с врагом
+    }, 500); // останавливается на 0.5 секунды между движениями
   }
   
   moveLeft() {
-    // Идём влево.
-    this.position -= 1;
-    this.position -= distance;
+    this.position -= 1; // Двигаем влево
   }
 
   moveRight() {
-    // Идём вправо.
-    this.position += 1;
-    this.position += distance;
+    this.position += 1; // Двигаем вправо
   }
 }
 
