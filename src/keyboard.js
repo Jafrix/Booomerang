@@ -9,7 +9,7 @@ const keypress = require("keypress");
 
 const keyboard = {
   q: (hero) => hero.moveRight(),
-  w: () => console.log("w"),
+  w: (hero) => hero.moveLeft(),
   e: () => console.log("e"),
   r: () => console.log("r"),
   t: () => console.log("t"),
