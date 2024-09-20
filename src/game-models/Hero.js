@@ -1,4 +1,5 @@
 // Наш герой.
+const Boomerang = require('./Boomerang.js');
 
 class Hero {
   constructor({ position }) {
